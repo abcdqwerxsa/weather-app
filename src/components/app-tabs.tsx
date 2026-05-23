@@ -11,7 +11,7 @@ export default function AppTabs() {
   const isGlass = activeTheme === 'glass';
   const isNeo = activeTheme === 'neo';
   
-  const backgroundColor = isGlass ? '#071521' : isNeo ? '#E0E5EC' : '#FAFAFA';
+  const backgroundColor = isGlass ? '#052e37' : isNeo ? '#E0E5EC' : '#FAFAFA';
   const indicatorColor = isGlass ? '#00b080' : isNeo ? '#FF9F1C' : '#1E1E24';
   const labelSelectedColor = isGlass ? '#00F260' : isNeo ? '#FF9F1C' : '#1E1E24';
   const labelUnselectedColor = isGlass ? 'rgba(255, 255, 255, 0.6)' : isNeo ? '#7D8A99' : '#7F8C8D';

@@ -66,8 +66,8 @@ export default function MinimalistTheme({ data, themeToggle, searchBar, aiCommen
         {/* Current Weather Card */}
         <View style={styles.cardBig}>
           <View style={styles.mainInfo}>
-            <View>
-              <Text style={styles.cityName}>{current.cityName}</Text>
+            <View style={{ flex: 1, paddingRight: 8 }}>
+              <Text style={styles.cityName} numberOfLines={2}>{current.cityName}</Text>
               <Text style={styles.dateText}>
                 {new Date(current.dt * 1000).toLocaleDateString('zh-CN', {
                   month: 'numeric',

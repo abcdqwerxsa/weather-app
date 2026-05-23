@@ -158,12 +158,12 @@ const styles = StyleSheet.create({
 
   // Glass Theme styles
   bgGlass: {
-    backgroundColor: 'rgba(5, 28, 36, 0.75)',
+    backgroundColor: 'rgba(255, 255, 255, 0.08)',
     borderWidth: 1,
-    borderColor: 'rgba(0, 242, 96, 0.3)',
-    shadowColor: '#00F260',
+    borderColor: 'rgba(255, 255, 255, 0.18)',
+    shadowColor: 'rgba(0, 0, 0, 0.1)',
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.1,
+    shadowOpacity: 0.05,
     shadowRadius: 10,
   },
   btnGlassActive: {
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
     borderColor: 'transparent',
   },
   textGlassActive: { color: '#00F260', fontWeight: 'bold' },
-  textGlassInactive: { color: 'rgba(255, 255, 255, 0.65)' },
+  textGlassInactive: { color: 'rgba(255, 255, 255, 0.7)' },
   brandTextGlass: { color: '#00F260', fontWeight: 'bold', fontSize: 14 },
   linkGlass: { color: 'rgba(255, 255, 255, 0.8)' },
 

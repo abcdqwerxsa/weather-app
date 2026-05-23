@@ -841,10 +841,8 @@ const styles = StyleSheet.create({
 
   // Dropdown list styles
   dropdownListContainer: {
-    position: 'absolute',
-    top: 42,
-    left: 0,
-    right: 0,
+    position: 'relative',
+    marginTop: 8,
     borderRadius: 14,
     borderWidth: 1,
     padding: 6,
