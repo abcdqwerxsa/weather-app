@@ -234,6 +234,8 @@ const styles = StyleSheet.create({
   },
   searchSection: {
     marginBottom: 20,
+    zIndex: 999,
+    position: 'relative',
   },
   cardBig: {
     backgroundColor: '#FFFFFF',

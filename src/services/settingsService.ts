@@ -12,6 +12,7 @@ export interface AppSettings {
   aiKeys: string[];
   activeAiIndex: number;
   aiPrompt: string;
+  theme?: 'glass' | 'neo' | 'minimal';
 }
 
 const STORAGE_KEY = 'NIXIN_WEATHER_APP_SETTINGS';
@@ -26,6 +27,7 @@ export const DEFAULT_SETTINGS: AppSettings = {
   aiKeys: ['c6c2da9ab7404675831eb2bda3b69c88.MSWN5AuYRTTiEu_ljGXhvJwg'],
   activeAiIndex: 0,
   aiPrompt: '你是一个幽默风趣、爱说骚话的天气播报员。请根据当前的天气数据，写一段幽默、风趣、带有一点点调侃或骚话的天气短评，字数限制在50字以内，必须保留核心天气信息（如温度和雨雪情况），体现出多变和幽默的特色。不要出现“好的”、“收到”等开场白，直接输出骚话内容。',
+  theme: 'glass',
 };
 
 /**

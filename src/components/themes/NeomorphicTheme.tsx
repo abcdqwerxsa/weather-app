@@ -274,6 +274,8 @@ const styles = StyleSheet.create({
   },
   searchSection: {
     marginBottom: 20,
+    zIndex: 999,
+    position: 'relative',
   },
   // Double shadows for Big Neomorphic Card
   neoCardBigOuter: {

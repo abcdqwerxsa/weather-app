@@ -241,6 +241,8 @@ const styles = StyleSheet.create({
   },
   searchSection: {
     marginBottom: 20,
+    zIndex: 999,
+    position: 'relative',
   },
   glassCardBig: {
     backgroundColor: 'rgba(255, 255, 255, 0.08)',

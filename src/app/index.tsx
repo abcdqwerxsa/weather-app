@@ -49,6 +49,7 @@ import { generateWeatherComment } from '../services/aiService';
 import GlassmorphicTheme from '../components/themes/GlassmorphicTheme';
 import NeomorphicTheme from '../components/themes/NeomorphicTheme';
 import MinimalistTheme from '../components/themes/MinimalistTheme';
+import { useAppTheme, ThemeType } from '../services/themeContext';
 
 // Import our tactile animated components
 import InteractiveButton from '../components/InteractiveButton';
@@ -63,10 +64,8 @@ const DEFAULT_CITY: CityInfo = {
   state: 'Guangdong Province'
 };
 
-type ThemeType = 'glass' | 'neo' | 'minimal';
-
 export default function HomeScreen() {
-  const [activeTheme, setActiveTheme] = useState<ThemeType>('glass');
+  const { activeTheme, setActiveTheme } = useAppTheme();
   const [currentCity, setCurrentCity] = useState<CityInfo>(DEFAULT_CITY);
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
