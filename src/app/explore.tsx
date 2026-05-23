@@ -8,7 +8,8 @@ import {
   Switch, 
   Alert, 
   Platform,
-  ActivityIndicator
+  ActivityIndicator,
+  TouchableOpacity
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -28,6 +29,14 @@ import {
   AppSettings 
 } from '../services/settingsService';
 import InteractiveButton from '../components/InteractiveButton';
+
+const POPULAR_MODELS = [
+  { name: 'DeepSeek-V3', id: 'deepseek-ai/DeepSeek-V3' },
+  { name: 'DeepSeek-R1', id: 'deepseek-ai/DeepSeek-R1' },
+  { name: 'Ollama R1 (7B)', id: 'deepseek-r1:7b' },
+  { name: 'Ollama Qwen (7B)', id: 'qwen2.5:7b' },
+  { name: 'Ollama Llama3', id: 'llama3' },
+];
 
 export default function SettingsScreen() {
   const [settings, setSettings] = useState<AppSettings | null>(null);
@@ -234,6 +243,27 @@ export default function SettingsScreen() {
                   placeholder="deepseek-ai/DeepSeek-V3"
                   placeholderTextColor="rgba(255,255,255,0.4)"
                 />
+
+                {/* Popular Models Quick Select */}
+                <View style={styles.pillsContainer}>
+                  {POPULAR_MODELS.map((item) => (
+                    <TouchableOpacity
+                      key={item.id}
+                      style={[
+                        styles.pill,
+                        aiModel === item.id && styles.pillActive
+                      ]}
+                      onPress={() => setAiModel(item.id)}
+                    >
+                      <Text style={[
+                        styles.pillText,
+                        aiModel === item.id && styles.pillTextActive
+                      ]}>
+                        {item.name}
+                      </Text>
+                    </TouchableOpacity>
+                  ))}
+                </View>
 
                 <Text style={styles.label}>AI API Key 池 (支持逗号分隔多个 Key 自动灾备):</Text>
                 <TextInput
@@ -466,6 +496,34 @@ const styles = StyleSheet.create({
   btnText: {
     color: '#FFFFFF',
     fontSize: 14,
+    fontWeight: 'bold',
+  },
+  pillsContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    marginBottom: 16,
+    marginTop: -4,
+  },
+  pill: {
+    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.1)',
+    borderRadius: 12,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+  },
+  pillActive: {
+    backgroundColor: 'rgba(0, 176, 128, 0.15)',
+    borderColor: '#00b080',
+  },
+  pillText: {
+    color: 'rgba(255, 255, 255, 0.65)',
+    fontSize: 11,
+    fontWeight: '500',
+  },
+  pillTextActive: {
+    color: '#00b080',
     fontWeight: 'bold',
   },
 });
